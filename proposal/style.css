@@ -111,15 +111,6 @@ body {
   color: var(--accent-strong);
 }
 
-.map-link {
-  padding: 10px 24px;
-  border: 1px solid rgba(233, 119, 108, .5);
-  border-radius: 8px;
-  color: var(--accent-strong);
-  font-size: 13.5px;
-  text-decoration: none;
-}
-
 /* 등장 전환: 활성 카드는 제목이 먼저 뜨고, 편지 패널은 is-open 일 때 아래에서 올라온다 */
 .card-head { opacity: 0; transform: translateY(14px); transition: opacity .8s ease, transform .8s ease; }
 .card.is-active .card-head { opacity: 1; transform: none; transition-delay: .15s; }
