@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+  <meta name="robots" content="noindex, nofollow">
+  <meta name="format-detection" content="telephone=no">
+  <title>오늘 밤, 널 초대할게</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@300;400&family=Gowun+Batang:wght@400;700&display=swap" rel="stylesheet">
+  <link rel="preload" as="image" href="assets/card-01_welcome.webp">
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <main class="deck" id="deck" aria-roledescription="carousel">
+
+    <section class="card" style="--bg:url('assets/card-01_welcome.webp')" aria-label="1 / 4">
+      <header class="card-head">
+        <p class="eyebrow">01</p>
+        <h1 class="title">오늘 밤, 널 초대할게. 💌</h1>
+      </header>
+      <div class="panel">
+        <p>오늘 하루 정말 고생 많았지?</p>
+        <p>오늘은 너를 위해<br>작은 선물을 준비했어.</p>
+        <p>네가 좋아할 만한 곳으로 골랐으니까<br>기대해도 좋아 :)</p>
+        <p class="from">From. 너의 다람쥐 🐿️</p>
+      </div>
+      <p class="swipe-hint" aria-hidden="true">옆으로 넘겨 봐 ›</p>
+      <p class="open-pill" aria-hidden="true">편지 다시 보기 ✉️</p>
+    </section>
+
+    <section class="card" style="--bg:url('assets/card-02_listening_room.webp')" aria-label="2 / 4">
+      <header class="card-head">
+        <p class="eyebrow">02</p>
+        <h2 class="title">우리, 여기 기억나? 🎵</h2>
+      </header>
+      <div class="panel">
+        <p>우리 처음 만난 지 얼마 안 됐을 때<br>같이 갔었던 곳 기억나?</p>
+        <p>음악도 좋고, 분위기도 참 좋았던 곳.</p>
+        <p>오늘은 거기서 다시 만나자.</p>
+        <p class="detail">10월 14일 수요일 · 오후 8시<br>서울 강동구 풍성로38길 13, B1층</p>
+        <a class="map-link" href="https://map.kakao.com/link/search/서울 강동구 풍성로38길 13" target="_blank" rel="noopener">카카오맵으로 보기</a>
+      </div>
+      <p class="open-pill" aria-hidden="true">편지 다시 보기 ✉️</p>
+    </section>
+
+    <section class="card" style="--bg:url('assets/card-03_cozy_plan.webp')" aria-label="3 / 4">
+      <header class="card-head">
+        <p class="eyebrow">03</p>
+        <h2 class="title">오늘의 작은 계획 🌰</h2>
+      </header>
+      <div class="panel">
+        <p>좋아하는 음악도 듣고,<br>맛있는 것도 조금 먹고,<br>이런저런 이야기도 나누고.</p>
+        <p>오늘은 우리 둘이서<br>즐거운 시간을 보내자.</p>
+        <p>참, 내가 이것저것 준비해 놨어!</p>
+      </div>
+      <p class="open-pill" aria-hidden="true">편지 다시 보기 ✉️</p>
+    </section>
+
+    <section class="card" style="--bg:url('assets/card-04_waiting_love.webp')" aria-label="4 / 4">
+      <header class="card-head">
+        <p class="eyebrow">04</p>
+        <h2 class="title">조금 있다 만나. ❤️</h2>
+      </header>
+      <div class="panel">
+        <p>나는 먼저 가서 기다리고 있을게.</p>
+        <p>오는 길은 걱정하지 마.<br>편하게 올 수 있게 준비해 뒀어.</p>
+        <p>조심히 오고,<br>조금 있다 보자 :)</p>
+        <p class="from">From. 먼저 가서 기다리는 다람쥐 🐿️</p>
+      </div>
+      <p class="open-pill" aria-hidden="true">편지 다시 보기 ✉️</p>
+    </section>
+
+  </main>
+
+  <nav class="dots" id="dots" aria-label="카드 이동"></nav>
+
+  <script src="script.js"></script>
+</body>
+</html>
