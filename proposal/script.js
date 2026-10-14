@@ -42,10 +42,12 @@
   }, { root: deck, threshold: 0.6 });
   cards.forEach(function (c) { observer.observe(c); });
 
-  // 카드를 탭하면 편지를 내리고/올린다 (링크 탭은 제외)
+  // 카드를 탭하면 편지를 내리고/올린다 (링크 탭은 제외, 화살표는 이전/다음 카드로)
   deck.addEventListener('click', function (e) {
     if (e.target.closest('a')) return;
     var card = e.target.closest('.card');
+    var arrow = e.target.closest('.nav-arrow');
+    if (arrow) { goTo(cards.indexOf(card) + (arrow.classList.contains('prev') ? -1 : 1)); return; }
     if (!card || !card.classList.contains('is-active')) return;
     clearTimeout(openTimer);
     setOpen(card, !card.classList.contains('is-open'));

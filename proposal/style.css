@@ -136,21 +136,39 @@ body {
 }
 .card.is-active.was-opened:not(.is-open) .open-pill { opacity: 1; transform: translate(-50%, 0); }
 
-.swipe-hint {
+/* 이전/다음 카드로 넘기는 삼각형 화살표: 편지 패널 옆 여백(20px) 안에 들어가게 둔다 */
+.nav-arrow {
   position: absolute;
-  left: 0;
-  right: 0;
-  bottom: calc(40px + env(safe-area-inset-bottom));
-  text-align: center;
-  font-size: 12px;
-  color: rgba(255, 255, 255, .9);
-  text-shadow: 0 1px 6px rgba(40, 20, 5, .6);
-  animation: hint-nudge 2.4s ease-in-out 1.6s infinite both;
-  pointer-events: none;
+  top: 50%;
+  width: 34px;
+  height: 64px;
+  margin-top: -32px;
+  padding: 0 2px;
+  border: none;
+  background: none;
+  display: flex;
+  align-items: center;
+  cursor: pointer;
+  filter: drop-shadow(0 0 1px #fff) drop-shadow(0 0 1.5px #fff) drop-shadow(0 2px 6px rgba(40, 20, 5, .6));
+  -webkit-tap-highlight-color: transparent;
 }
-@keyframes hint-nudge {
-  0%, 100% { opacity: .5; transform: translateX(0); }
-  50% { opacity: 1; transform: translateX(6px); }
+.nav-arrow::before {
+  content: '';
+  width: 19px;
+  height: 32px;
+  background: var(--accent-strong);
+}
+.nav-arrow.next { right: 0; justify-content: flex-end; animation: arrow-nudge-next 1.8s ease-in-out infinite; }
+.nav-arrow.next::before { clip-path: polygon(0 0, 100% 50%, 0 100%); }
+.nav-arrow.prev { left: 0; justify-content: flex-start; animation: arrow-nudge-prev 1.8s ease-in-out infinite; }
+.nav-arrow.prev::before { clip-path: polygon(100% 0, 0 50%, 100% 100%); }
+@keyframes arrow-nudge-next {
+  0%, 100% { transform: translateX(-4px); }
+  50% { transform: translateX(0); }
+}
+@keyframes arrow-nudge-prev {
+  0%, 100% { transform: translateX(4px); }
+  50% { transform: translateX(0); }
 }
 
 .dots {
@@ -186,8 +204,5 @@ body {
 @media (prefers-reduced-motion: reduce) {
   .deck { scroll-behavior: auto; }
   .card::before, .card-head, .panel, .open-pill { transition: none; }
-  .swipe-hint { animation: none; }
+  .nav-arrow { animation: none; }
 }
-
-/* 편지가 내려가 있으면 안내 pill 과 겹치므로 숨긴다 */
-.card:not(.is-open) .swipe-hint { visibility: hidden; }
